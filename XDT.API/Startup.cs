@@ -42,6 +42,7 @@ namespace XDT.API
 
             app.UseStaticFiles();
             app.UseMvc();
+            //这里修改下，测试是否能够提交
         }
     }
 }
