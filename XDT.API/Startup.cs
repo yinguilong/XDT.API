@@ -42,9 +42,12 @@ namespace XDT.API
 
             app.UseStaticFiles();
             app.UseMvc();
+
             //这里修改下，测试是否能够提交
+            //int[] nums = new int[] {1,2,3,4,5 };
             //yinguilong update 222
             //lijinglong
+            //zheshiwoxiugaideneirong
         }
     }
 }
