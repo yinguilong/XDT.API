@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.13
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "XDT.Web", "XDT.Web\XDT.Web.xproj", "{C946379D-C496-414A-AE06-F36D83E8FF7F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XDT.Web", "XDT.Web\XDT.Web.csproj", "{C946379D-C496-414A-AE06-F36D83E8FF7F}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "XDT.API", "XDT.API\XDT.API.xproj", "{C5245E68-9A3C-4CBB-A034-38A8E59F6D7A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XDT.API", "XDT.API\XDT.API.csproj", "{C5245E68-9A3C-4CBB-A034-38A8E59F6D7A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
