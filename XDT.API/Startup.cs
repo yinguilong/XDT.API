@@ -51,6 +51,7 @@ namespace XDT.API
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+            //测试
         }
     }
 }
