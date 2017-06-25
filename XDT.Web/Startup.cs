@@ -29,6 +29,8 @@ namespace XDT.Web
         {
             // Add framework services.
             services.AddMvc();
+            //application service
+            //services.AddSingleton()
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

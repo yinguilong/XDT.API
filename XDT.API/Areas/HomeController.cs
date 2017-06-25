@@ -14,7 +14,7 @@ namespace XDT.API.Areas
         [Route("/")]
         public IActionResult Index()
         {
-            return Content("Welcome!!");
+            return Content("Hello World!");
         }
     }
 }
