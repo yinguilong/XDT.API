@@ -22,7 +22,7 @@ namespace XDT.Model.DTO
         public decimal CurrentPrice { get; set; }
         public string Description { get; set; }
         public BoxItemDTO PPBoxItemDto { get; set; }
-        public UserDDTO Operator { get; set; }
+        public UserDTO Operator { get; set; }
         public DictItemType ItemType { get; set; }
     }
 }

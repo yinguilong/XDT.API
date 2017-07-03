@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
 using XDT.Domain.Repositories;
+using XDT.Infrastructure;
 using XDT.Model.Enums;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace XDT.Domain.Model
 {
@@ -12,6 +14,7 @@ namespace XDT.Domain.Model
     /// </summary>
     public class WareItem : AggregateRoot
     {
+        
         public WareItem(string url)
         {
             ListenUrl = url;
@@ -49,11 +52,11 @@ namespace XDT.Domain.Model
             WareItem other = obj as WareItem;
             if ((object)other == null)
                 return false;
-            return (this.Id == other.Id || this.ListenUrl == other.ListenUrl);
+            return (this.ID == other.ID || this.ListenUrl == other.ListenUrl);
         }
         public override int GetHashCode()
         {
-            return this.Id.GetHashCode();
+            return this.ID.GetHashCode();
         }
         public void Init()
         {
@@ -128,8 +131,8 @@ namespace XDT.Domain.Model
         {
             var ppboxItem = new BoxItem();
             var _ppBoxRepository = ServiceLocator.Instance.GetService<IBoxRepository>();
-            ppboxItem.Box = _ppBoxRepository.GetByExpression(x => x.User.Id == userId);
-            ppboxItem.PPismItem = this;
+            ppboxItem.Box = _ppBoxRepository.GetByExpression(x => x.User.ID == userId);
+            ppboxItem.WareItem = this;
             ppboxItem.CreateTime = DateTime.Now;
             return ppboxItem;
         }

@@ -70,7 +70,7 @@ namespace XDT.Service.ServiceImplementations
         {
           
             var list = _priceItemRepository.GetAll(
-                x => x.WareItem.Id == wareItemId,
+                x => x.WareItem.ID == wareItemId,
                 x => x.UpdateTime,
                 System.Data.SqlClient.SortOrder.Ascending)
                 .ToList();

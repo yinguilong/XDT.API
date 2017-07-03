@@ -7,6 +7,6 @@ namespace XDT.Domain
     public interface IEntity
     {
         // 当前领域实体的全局唯一标识
-        long Id { get; }
+        long ID { get; }
     }
 }

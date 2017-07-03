@@ -6,7 +6,7 @@ namespace XDT.Domain
 {
     public abstract class AggregateRoot : IAggregateRoot
     {
-        public long Id
+        public long ID
         {
             get;
             set;
@@ -23,12 +23,12 @@ namespace XDT.Domain
             IAggregateRoot ar = obj as IAggregateRoot;
             if (ar == null)
                 return false;
-            return this.Id == ar.Id;
+            return this.ID == ar.ID;
         }
 
         public override int GetHashCode()
         {
-            return this.Id.GetHashCode();
+            return this.ID.GetHashCode();
         }
 
         #endregion

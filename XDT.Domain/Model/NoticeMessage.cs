@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using XDT.Model.Enums;
 
 namespace XDT.Domain.Model
 {

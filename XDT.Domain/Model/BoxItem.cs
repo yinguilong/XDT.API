@@ -10,7 +10,7 @@ namespace XDT.Domain.Model
     public class BoxItem : AggregateRoot
     {
         public Box Box { get; set; }
-        public virtual PPismItem PPismItem { get; set; }
+        public virtual WareItem WareItem { get; set; }
         public DateTime CreateTime { get; set; }
     }
 }
