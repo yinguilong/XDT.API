@@ -25,17 +25,8 @@ namespace XDT.Repositories.EntityFramework
         public DbSet<UserAdvice> UserAdvice { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //modelBuilder
-            //    .ApplyConfiguration
-            //    .Add(new UserTypeConfiguration())
-            //    .Add(new PPBoxItemTypeConfiguration())
-            //    .Add(new PPBoxTypeConfiguration())
-            //    .Add(new PPismItemTypeConfiguration())
-            //    .Add(new PriceItemTypeConfiguration())
-            //    .Add(new UrlHistoryItemConfiguration())
-            //    .Add(new PPismItemDiscussConfiguration())
-            //    .Add(new NoticeMessageTypeConfiguration())
-            //     .Add(new UserAdviceTypeConfiguration());
+            modelBuilder
+                .ApplyConfiguration(new UserTypeConfiguration());
             base.OnModelCreating(modelBuilder);
         }
     }

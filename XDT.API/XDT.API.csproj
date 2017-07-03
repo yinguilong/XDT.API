@@ -26,6 +26,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\XDT.Repositories\XDT.Repositories.csproj" />
+    <ProjectReference Include="..\XDT.Service\XDT.Service.csproj" />
   </ItemGroup>
 
 </Project>
