@@ -12,13 +12,11 @@ namespace XDT.API.Areas
 {
     public class HomeController : BaseController
     {
-        private IBoxRepository _ppBoxRepository;
         // GET: /<controller>/
         [Route("/")]
         public IActionResult Index()
         {
-            
-            return Content("Hello World!");
+            return Content("做有趣的人，做有意义的事!");
         }
     }
 }
