@@ -8,9 +8,9 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Configuration;
-using XDT.Repositories.EntityFramework;
 using Microsoft.EntityFrameworkCore;
 using XDT.Infrastructure;
+using XDT.Repositories.EntityFramework;
 
 namespace XDT.API
 {
@@ -34,7 +34,7 @@ namespace XDT.API
             services.AddCors();
             services.AddDbContext<XDTDbContext>(options =>
             {
-                options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection"));
+                options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection"),(b)=> { b.MigrationsAssembly("XDT.API"); });
             });
         }
 
