@@ -13,7 +13,7 @@ namespace XDT.Repositories.EntityFramework
         public XDTDbContext(DbContextOptions<XDTDbContext> options)
             : base(options)
         {
-            Database.EnsureCreated();
+            Database.Migrate();
         }
         public DbSet<Box> Box { get; set; }
         public DbSet<BoxItem> BoxItem { get; set; }
