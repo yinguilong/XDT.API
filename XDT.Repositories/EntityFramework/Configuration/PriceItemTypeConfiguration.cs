@@ -7,13 +7,15 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace XDT.Repositories.EntityFramework
 {
-    public class NoticeMessageTypeConfiguration : IEntityTypeConfiguration<NoticeMessage>
+    public class PriceItemTypeConfiguration : IEntityTypeConfiguration<PriceItem>
     {
-        public void Configure(EntityTypeBuilder<NoticeMessage> builder)
+        public void Configure(EntityTypeBuilder<PriceItem> builder)
         {
             builder.HasKey(c => c.ID);
             builder.Property(c => c.ID)
                 .IsRequired();
+            builder.Property(c => c.Price)
+                .HasColumnType("numeric");
         }
     }
 }

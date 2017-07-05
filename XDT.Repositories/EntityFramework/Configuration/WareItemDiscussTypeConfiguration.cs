@@ -7,13 +7,18 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace XDT.Repositories.EntityFramework
 {
-    public class NoticeMessageTypeConfiguration : IEntityTypeConfiguration<NoticeMessage>
+    public class WareItemDiscussTypeConfiguration : IEntityTypeConfiguration<WareItemDiscuss>
     {
-        public void Configure(EntityTypeBuilder<NoticeMessage> builder)
+        public void Configure(EntityTypeBuilder<WareItemDiscuss> builder)
         {
             builder.HasKey(c => c.ID);
             builder.Property(c => c.ID)
                 .IsRequired();
+            builder.Property(c => c.Discuss)
+               .IsRequired()
+               .HasMaxLength(200);
+            builder.Property(c => c.Additional)
+               .HasMaxLength(100);
         }
     }
 }

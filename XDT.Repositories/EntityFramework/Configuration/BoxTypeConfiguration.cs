@@ -7,9 +7,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace XDT.Repositories.EntityFramework
 {
-    public class NoticeMessageTypeConfiguration : IEntityTypeConfiguration<NoticeMessage>
+    public class BoxTypeConfiguration : IEntityTypeConfiguration<Box>
     {
-        public void Configure(EntityTypeBuilder<NoticeMessage> builder)
+        public void Configure(EntityTypeBuilder<Box> builder)
         {
             builder.HasKey(c => c.ID);
             builder.Property(c => c.ID)

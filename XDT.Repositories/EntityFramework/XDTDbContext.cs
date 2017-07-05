@@ -7,7 +7,7 @@ using XDT.Domain.Model;
 
 namespace XDT.Repositories.EntityFramework
 {
-   public class XDTDbContext : DbContext
+    public class XDTDbContext : DbContext
     {
 
         public XDTDbContext(DbContextOptions<XDTDbContext> options)
@@ -26,7 +26,15 @@ namespace XDT.Repositories.EntityFramework
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder
-                .ApplyConfiguration(new UserTypeConfiguration());
+                .ApplyConfiguration(new UserTypeConfiguration())
+                .ApplyConfiguration(new NoticeMessageTypeConfiguration())
+                .ApplyConfiguration(new BoxItemTypeConfiguration())
+                .ApplyConfiguration(new BoxTypeConfiguration())
+                 .ApplyConfiguration(new PriceItemTypeConfiguration())
+                  .ApplyConfiguration(new UrlHistoryItemTypeConfiguration())
+                   .ApplyConfiguration(new UserAdviceTypeConfiguration())
+                    .ApplyConfiguration(new WareItemDiscussTypeConfiguration())
+                     .ApplyConfiguration(new WareItemTypeConfiguration());
             base.OnModelCreating(modelBuilder);
         }
     }

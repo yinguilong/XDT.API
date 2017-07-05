@@ -7,9 +7,12 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace XDT.Repositories.EntityFramework
 {
-    public class NoticeMessageTypeConfiguration : IEntityTypeConfiguration<NoticeMessage>
+    /// <summary>
+    /// BoxItem的数据库配置
+    /// </summary>
+    public class BoxItemTypeConfiguration : IEntityTypeConfiguration<BoxItem>
     {
-        public void Configure(EntityTypeBuilder<NoticeMessage> builder)
+        public void Configure(EntityTypeBuilder<BoxItem> builder)
         {
             builder.HasKey(c => c.ID);
             builder.Property(c => c.ID)
