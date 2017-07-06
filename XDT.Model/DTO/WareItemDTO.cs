@@ -21,7 +21,7 @@ namespace XDT.Model.DTO
         public string ItemImage { get; set; }
         public decimal CurrentPrice { get; set; }
         public string Description { get; set; }
-        public BoxItemDTO PPBoxItemDto { get; set; }
+        public BoxItemDTO BoxItemDto { get; set; }
         public UserDTO Operator { get; set; }
         public DictItemType ItemType { get; set; }
     }

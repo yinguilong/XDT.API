@@ -12,7 +12,7 @@ namespace XDT.Model.DTO
         public string Content { get; set; }
         public DateTime CreateTime { get; set; }
 
-        public string UserId { get; set; }
+        public long? UserId { get; set; }
 
         public DictAdviceLevel Level { get; set; }
     }

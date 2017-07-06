@@ -39,5 +39,39 @@ namespace XDT.API.Areas
             };
             return Json(responseModel);
         }
+        [Route("/shangpin/prices")]
+        public IActionResult PriceItems(RequestEntity<BoxItemDTO> reqEntity)
+        {
+            if (reqEntity.Count != reqEntity.Items.Count() && reqEntity.Count != 1)
+            {
+                return Json(new ResponseEntity<BoxItemDTO>() { Result = false });
+            }
+            var ppismItem = reqEntity.Items.Single();
+            var priceItems = _wareItemServiceImp.GetPriceItemsByWareItem(ppismItem.WareItemId);
+            var responseModel = new ResponseEntity<PriceItemDTO>()
+            {
+                Result = true,
+                Items = priceItems,
+                Count = priceItems == null ? 0 : priceItems.Count
+            };
+            return Json(responseModel);//
+        }
+        [Route("/shangpin/mybox")]
+        public IActionResult GetMyBoxItems(RequestEntity<BoxItemDTO> reqEntity)
+        {
+            if (reqEntity.Count != reqEntity.Items.Count() && reqEntity.Count != 1)
+            {
+                return Json(new ResponseEntity<BoxItemDTO>() { Result = false });
+            }
+            var boxItem = reqEntity.Items.Single();
+            var boxItems = _boxItemServiceImp.GetBoxItemsByUserId(boxItem.UserId, (byte)boxItem.Trend, boxItem.PageIndex ?? 1, boxItem.PageSize ?? 6);
+            var responseModel = new ResponseEntity<BoxItemDTO>()
+            {
+                Result = true,
+                Items = boxItems,
+                Count = boxItems == null ? 0 : boxItems.Count
+            };
+            return Json(responseModel);//
+        }
     }
 }

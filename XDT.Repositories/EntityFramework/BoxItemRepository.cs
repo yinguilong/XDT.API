@@ -16,21 +16,6 @@ namespace XDT.Repositories.EntityFramework
         }
         public PagedResult<BoxItem> GetBoxItemsByUserId(long userId, byte trend, int pageIndex, int pageSize)
         {
-            //var queryBox = EfContext.DbContext.PPBox.Where(x => x.User.Id == userId);
-            //var querBoxItem = EfContext.DbContext.PPBoxItem.AsQueryable();
-            //var queryItem = EfContext.DbContext.PPismItem.AsQueryable();
-            //var queryJoin = from b in queryBox
-            //                join i in querBoxItem.DefaultIfEmpty()
-            //                on b.Id
-            //                equals i.PPBox.Id into queryJ
-            //                from q in queryJ.DefaultIfEmpty()
-            //                select new
-            //                {
-            //                    PPBox = b
-            //                    //User = b.User
-            //                    //PPismItem = q == null ? null : q.PPismItem
-            //                };
-            //return HideEntityToEntity<PPBoxItem>(queryJoin.ToList());
             var ppBox = EfContext.DbContext.Box.SingleOrDefault(x => x.User.ID == userId);
             var pageList = trend == 0 ? GetAll(
                 x => x.Box.ID == ppBox.ID,
@@ -45,8 +30,6 @@ namespace XDT.Repositories.EntityFramework
                 pageIndex,
                 pageSize
                 );
-
-            //var ppBoxItem = EfContext.DbContext.PPBoxItem.Where(x => x.PPBox.Id == ppBox.Id).OrderByDescending(x => x.CreateTime).Take(pageSize).Skip(pageSize * (pageIndex - 1)).ToList();
             if (pageList != null && pageList.Any())
             {
                 var listIds = pageList.PageData.Select(x => x.WareItem.ID).ToList();
@@ -59,7 +42,6 @@ namespace XDT.Repositories.EntityFramework
                         if (ppism != null) x.WareItem = ppism;
                     });
                 }
-
             }
             return pageList;
         }

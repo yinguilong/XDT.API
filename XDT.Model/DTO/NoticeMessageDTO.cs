@@ -15,7 +15,7 @@ namespace XDT.Model.DTO
         public string Content { get; set; }
         public DateTime CreateTime { get; set; }
 
-        public long UserId { get; set; }
+        public long? UserId { get; set; }
     }
 }
 
