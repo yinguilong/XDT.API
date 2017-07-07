@@ -23,16 +23,6 @@ namespace XDT.Service
 
         #region Protected Methods
 
-        // 判断给定字符串是否是Guid.Empty
-        protected bool IsEmptyGuidString(string s)
-        {
-            if (string.IsNullOrWhiteSpace(s))
-                return true;
-            var guid = new Guid(s);
-            return guid == Guid.Empty;
-        }
-
-
         // 处理简单的聚合创建逻辑。
         protected TDtoList PerformCreateObjects<TDtoList, TDto, TAggregateRoot>(TDtoList dataTransferObjects,
             IRepository<TAggregateRoot> repository,
