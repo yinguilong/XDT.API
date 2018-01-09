@@ -8,7 +8,7 @@ using XDT.Model.Contracts;
 using XDT.Repositories.EntityFramework;
 using XDT.Service.ServiceImplementations;
 
-namespace XDT.API
+namespace XDT.API.A
 {
     public class ConfigService
     {

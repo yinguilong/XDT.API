@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace XDT.Domain.Model
 {
+    [Table("Users1")]
     public class User : AggregateRoot
     {
 

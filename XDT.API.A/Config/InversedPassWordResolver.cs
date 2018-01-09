@@ -7,7 +7,7 @@ using XDT.Domain.Model;
 using XDT.Infrastructure;
 using XDT.Model.DTO;
 
-namespace XDT.API.Config
+namespace XDT.API.A.Config
 {
     public class InversedPassWordResolver : IMemberValueResolver<User, UserDTO, string, string>
     {

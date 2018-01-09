@@ -3,12 +3,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using XDT.API.Config;
+using XDT.API.A.Config;
 using XDT.Domain.Model;
 using XDT.Infrastructure;
 using XDT.Model.DTO;
 
-namespace XDT.API
+namespace XDT.API.A
 {
     /// <summary>
     /// automapper的配置

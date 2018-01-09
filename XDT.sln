@@ -1,21 +1,21 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.13
+VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XDT.Domain", "XDT.Domain\XDT.Domain.csproj", "{4D23925A-D119-40EF-88B8-035D164853C4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XDT.Domain", "XDT.Domain\XDT.Domain.csproj", "{4D23925A-D119-40EF-88B8-035D164853C4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XDT.Infrastructure", "XDT.Infrastructure\XDT.Infrastructure.csproj", "{46E3A398-4D80-45A5-8689-C6C569CFB3F6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XDT.Infrastructure", "XDT.Infrastructure\XDT.Infrastructure.csproj", "{46E3A398-4D80-45A5-8689-C6C569CFB3F6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XDT.Repositories", "XDT.Repositories\XDT.Repositories.csproj", "{495C76FD-D842-4B91-A5B7-2BFEAF767AB8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XDT.Repositories", "XDT.Repositories\XDT.Repositories.csproj", "{495C76FD-D842-4B91-A5B7-2BFEAF767AB8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XDT.Model", "XDT.Model\XDT.Model.csproj", "{D95CEDED-084F-4114-BCDF-5FDAEEA05474}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XDT.Model", "XDT.Model\XDT.Model.csproj", "{D95CEDED-084F-4114-BCDF-5FDAEEA05474}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XDT.Service", "XDT.Service\XDT.Service.csproj", "{F60F7164-1521-4729-A9D1-340B03A02BB1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XDT.Service", "XDT.Service\XDT.Service.csproj", "{F60F7164-1521-4729-A9D1-340B03A02BB1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XDT.Web", "XDT.Web\XDT.Web.csproj", "{1E1E2A48-E443-488F-8C32-ECBF38DB9972}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XDT.Web", "XDT.Web\XDT.Web.csproj", "{1E1E2A48-E443-488F-8C32-ECBF38DB9972}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XDT.API", "XDT.API\XDT.API.csproj", "{C17C2BB1-C563-4C9F-BFE2-ED4E55DA159A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XDT.API.A", "XDT.API.A\XDT.API.A.csproj", "{C7CF74FF-C7AF-499A-B86A-E8851995357A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,12 +47,15 @@ Global
 		{1E1E2A48-E443-488F-8C32-ECBF38DB9972}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1E1E2A48-E443-488F-8C32-ECBF38DB9972}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1E1E2A48-E443-488F-8C32-ECBF38DB9972}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C17C2BB1-C563-4C9F-BFE2-ED4E55DA159A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C17C2BB1-C563-4C9F-BFE2-ED4E55DA159A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C17C2BB1-C563-4C9F-BFE2-ED4E55DA159A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C17C2BB1-C563-4C9F-BFE2-ED4E55DA159A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7CF74FF-C7AF-499A-B86A-E8851995357A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7CF74FF-C7AF-499A-B86A-E8851995357A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7CF74FF-C7AF-499A-B86A-E8851995357A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7CF74FF-C7AF-499A-B86A-E8851995357A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5822E0C8-B1E3-471A-B643-7065F54CE5F7}
 	EndGlobalSection
 EndGlobal

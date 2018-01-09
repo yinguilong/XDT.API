@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
-using Microsoft.EntityFrameworkCore.Metadata;
+using System;
+using System.Collections.Generic;
 
-namespace XDT.API.Migrations
+namespace XDT.API.A.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class InitCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -14,7 +14,7 @@ namespace XDT.API.Migrations
                 columns: table => new
                 {
                     ID = table.Column<long>(nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Career = table.Column<string>(maxLength: 10, nullable: true),
                     Contact = table.Column<string>(nullable: true),
                     Email = table.Column<string>(nullable: true),
@@ -37,7 +37,7 @@ namespace XDT.API.Migrations
                 columns: table => new
                 {
                     ID = table.Column<long>(nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     UserID = table.Column<long>(nullable: true)
                 },
                 constraints: table =>
@@ -56,7 +56,7 @@ namespace XDT.API.Migrations
                 columns: table => new
                 {
                     ID = table.Column<long>(nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Content = table.Column<string>(nullable: true),
                     CreateTime = table.Column<DateTime>(nullable: false),
                     Status = table.Column<byte>(nullable: false),
@@ -78,7 +78,7 @@ namespace XDT.API.Migrations
                 columns: table => new
                 {
                     ID = table.Column<long>(nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Content = table.Column<string>(nullable: true),
                     CreateTime = table.Column<DateTime>(nullable: false),
                     Level = table.Column<byte>(nullable: false),
@@ -101,7 +101,7 @@ namespace XDT.API.Migrations
                 columns: table => new
                 {
                     ID = table.Column<long>(nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     CreateTime = table.Column<DateTime>(nullable: false),
                     CurrentPrice = table.Column<decimal>(type: "numeric", nullable: false),
                     Description = table.Column<string>(maxLength: 500, nullable: true),
@@ -132,7 +132,7 @@ namespace XDT.API.Migrations
                 columns: table => new
                 {
                     ID = table.Column<long>(nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     BoxID = table.Column<long>(nullable: true),
                     CreateTime = table.Column<DateTime>(nullable: false),
                     WareItemID = table.Column<long>(nullable: true)
@@ -159,7 +159,7 @@ namespace XDT.API.Migrations
                 columns: table => new
                 {
                     ID = table.Column<long>(nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     ActivityPrice = table.Column<decimal>(nullable: true),
                     Note = table.Column<string>(nullable: true),
                     Price = table.Column<decimal>(type: "numeric", nullable: false),
@@ -182,7 +182,7 @@ namespace XDT.API.Migrations
                 columns: table => new
                 {
                     ID = table.Column<long>(nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     UpdateTime = table.Column<DateTime>(nullable: false),
                     Url = table.Column<string>(maxLength: 500, nullable: true),
                     WareItemID = table.Column<long>(nullable: true)
@@ -203,7 +203,7 @@ namespace XDT.API.Migrations
                 columns: table => new
                 {
                     ID = table.Column<long>(nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Additional = table.Column<string>(maxLength: 100, nullable: true),
                     CreateTime = table.Column<DateTime>(nullable: false),
                     Discuss = table.Column<string>(maxLength: 200, nullable: false),

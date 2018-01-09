@@ -28,7 +28,6 @@ namespace XDT.Repositories.EntityFramework
         {
             modelBuilder.Entity<User>().HasKey(x => x.ID);
             modelBuilder.Entity<User>().Property(c => c.ID).IsRequired();
-            modelBuilder.Entity<User>().Property(c => c.ID).IsRequired();
             modelBuilder.Entity<User>().Property(c => c.UserName)
                .IsRequired()
                .HasMaxLength(20);

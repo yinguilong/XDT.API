@@ -7,7 +7,7 @@ using XDT.Model.DTO;
 using XDT.Domain.Model;
 using XDT.Infrastructure;
 
-namespace XDT.API.Config
+namespace XDT.API.A.Config
 {
     public class PassWordResolver : IMemberValueResolver<UserDTO, User,string,string>
     {
