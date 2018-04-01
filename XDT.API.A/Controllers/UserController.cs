@@ -23,7 +23,7 @@ namespace XDT.API.A.Controllers
         [Route("/user/register")]
         public IActionResult ReisterUser(RequestEntity<UserDTO> reqEntity)
         {
-            if (reqEntity.Count != reqEntity.Items.Count())
+            if (reqEntity == null || reqEntity.Count != reqEntity.Items.Count())
             {
                 return Json(new ResponseEntity<UserDTO>() { Result = false });
             }

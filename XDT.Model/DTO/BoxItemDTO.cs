@@ -24,6 +24,8 @@ namespace XDT.Model.DTO
         public string ItemImage { get; set; }
         public decimal CurrentPrice { get; set; }
         public string Description { get; set; }
+        public DictItemType ItemType { get; set; }
+
         #region Query property
         public int? PageIndex { get; set; }
         public int? PageSize { get; set; }

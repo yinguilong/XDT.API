@@ -268,20 +268,21 @@ namespace XDT.Repositories.EntityFramework
             var take = pageSize;
             if (sortPredicate == null)
                 throw new InvalidOperationException("基于分页功能的查询必须指定排序字段和排序顺序。");
-
+            var count = query.Count();
+            if (count == 0)
+                return null;
             switch (sortOrder)
             {
                 case SortOrder.Ascending:
-                    var pagedGroupAscending = query.SortBy(sortPredicate).Skip(skip).Take(take).GroupBy(p => new { Total = query.Count() }).FirstOrDefault();
-
-                    if (pagedGroupAscending == null)
+                    var pagedGroupAscending = query.SortBy(sortPredicate).Skip(skip).Take(take);
+                    if (pagedGroupAscending == null||!pagedGroupAscending.Any())
                         return null;
-                    return new PagedResult<TAggregateRoot>(pagedGroupAscending.Key.Total, (pagedGroupAscending.Key.Total + pageSize - 1) / pageSize, pageSize, pageNumber, pagedGroupAscending.Select(p => p).ToList());
+                    return new PagedResult<TAggregateRoot>(count, (count + pageSize - 1) / pageSize, pageSize, pageNumber, pagedGroupAscending.Select(p => p).ToList());
                 case SortOrder.Descending:
-                    var pagedGroupDescending = query.SortByDescending(sortPredicate).Skip(skip).Take(take).GroupBy(p => new { Total = query.Count() }).FirstOrDefault();
-                    if (pagedGroupDescending == null)
+                    var pagedGroupDescending = query.SortByDescending(sortPredicate).Skip(skip).Take(take);
+                    if (pagedGroupDescending == null||!pagedGroupDescending.Any())
                         return null;
-                    return new PagedResult<TAggregateRoot>(pagedGroupDescending.Key.Total, (pagedGroupDescending.Key.Total + pageSize - 1) / pageSize, pageSize, pageNumber, pagedGroupDescending.Select(p => p).ToList());
+                    return new PagedResult<TAggregateRoot>(count, (count + pageSize - 1) / pageSize, pageSize, pageNumber, pagedGroupDescending.Select(p => p).ToList());
                 default:
                     break;
             }
@@ -326,23 +327,24 @@ namespace XDT.Repositories.EntityFramework
 
             var skip = (pageNumber - 1) * pageSize;
             var take = pageSize;
-
+            var count = query.Count();
+            if (count == 0)
+                return null;
             if (sortPredicate == null)
                 throw new InvalidOperationException("基于分页功能的查询必须指定排序字段和排序顺序。");
 
             switch (sortOrder)
             {
                 case SortOrder.Ascending:
-                    var pagedGroupAscending = query.SortBy(sortPredicate).Skip(skip).Take(take).GroupBy(p => new { Total = query.Count() }).FirstOrDefault();
-
-                    if (pagedGroupAscending == null)
+                    var pagedGroupAscending = query.SortBy(sortPredicate).Skip(skip).Take(take);
+                    if (pagedGroupAscending == null || !pagedGroupAscending.Any())
                         return null;
-                    return new PagedResult<TAggregateRoot>(pagedGroupAscending.Key.Total, (pagedGroupAscending.Key.Total + pageSize - 1) / pageSize, pageSize, pageNumber, pagedGroupAscending.Select(p => p).ToList());
+                    return new PagedResult<TAggregateRoot>(count, (count + pageSize - 1) / pageSize, pageSize, pageNumber, pagedGroupAscending.Select(p => p).ToList());
                 case SortOrder.Descending:
-                    var pagedGroupDescending = query.SortByDescending(sortPredicate).Skip(skip).Take(take).GroupBy(p => new { Total = query.Count() }).FirstOrDefault();
-                    if (pagedGroupDescending == null)
+                    var pagedGroupDescending = query.SortByDescending(sortPredicate).Skip(skip).Take(take);
+                    if (pagedGroupDescending == null || !pagedGroupDescending.Any())
                         return null;
-                    return new PagedResult<TAggregateRoot>(pagedGroupDescending.Key.Total, (pagedGroupDescending.Key.Total + pageSize - 1) / pageSize, pageSize, pageNumber, pagedGroupDescending.Select(p => p).ToList());
+                    return new PagedResult<TAggregateRoot>(count, (count + pageSize - 1) / pageSize, pageSize, pageNumber, pagedGroupDescending.Select(p => p).ToList());
                 default:
                     break;
             }

@@ -22,13 +22,15 @@ namespace XDT.Repositories.EntityFramework
                 x => x.CreateTime,
                 System.Data.SqlClient.SortOrder.Descending,
                 pageIndex,
-                pageSize
+                pageSize,
+                x=>x.WareItem,x=>x.Box.User
                 ) : GetAll(
                 x => x.Box.ID == ppBox.ID && x.WareItem.Trend == (DictPriceTrend)trend,
                 x => x.CreateTime,
                 System.Data.SqlClient.SortOrder.Descending,
                 pageIndex,
-                pageSize
+                pageSize,
+                x=>x.WareItem, x => x.Box.User
                 );
             if (pageList != null && pageList.Any())
             {

@@ -34,6 +34,7 @@ namespace XDT.Model.Enums
         食品 = 10,
         水具 = 11,
         电子产品 = 12,
+        家电 = 13,
         其他 = 0
 
     }

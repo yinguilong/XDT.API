@@ -22,7 +22,10 @@ namespace XDT.Model.Contracts
         /// <summary>
         /// 返回 的数据集合
         /// </summary>
-        public IEnumerable<T> Items { get; set; }
+        public IEnumerable<T> Items
+        {
+            get; set;
+        }
     }
 }
 

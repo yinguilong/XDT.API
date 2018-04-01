@@ -29,16 +29,17 @@ namespace XDT.API.A
             services.AddMvc();
             services.AddCors();
             var dd = Configuration.GetConnectionString("DefaultConnection");
-            services.AddDbContext<XDTDbContext>(options =>
+            services.AddDbContextPool<XDTDbContext>(options =>
             {
                 options.UseMySql(Configuration.GetConnectionString("DefaultConnection"), (b) => { b.MigrationsAssembly("XDT.API.A"); });
             });
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env,IServiceProvider isp)
         {
-            ServiceLocator.Instance = app.ApplicationServices;
+            ServiceLocator.Instance = isp;
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
