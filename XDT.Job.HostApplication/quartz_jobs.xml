@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<job-scheduling-data xmlns="http://quartznet.sourceforge.net/JobSchedulingData"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ 				version="2.0">
+
+  <processing-directives>
+    <overwrite-existing-data>true</overwrite-existing-data>
+  </processing-directives>
+  <schedule>
+    <job>
+      <name>cd96626b-409a-4726-9608-ecceab566ecc</name>
+      <group>cd96626b-409a-4726-9608-ecceab566eccGroup</group>
+      <description>足球赔率-okooo-赔率获取任务</description>
+      <job-type>XDT.Spider.Jobs.Alibaba.FetchTMJob,XDT.Spider.Jobs</job-type>
+      <durable>true</durable>
+      <recover>false</recover>
+    </job>
+    <trigger>
+      <cron>
+        <name>0b304e44-543f-4c92-8f84-28f07fe70f67</name>
+        <group>0b304e44-543f-4c92-8f84-28f07fe70f67Group</group>
+        <job-name>cd96626b-409a-4726-9608-ecceab566ecc</job-name>
+        <job-group>cd96626b-409a-4726-9608-ecceab566eccGroup</job-group>
+        <cron-expression>* * * * * ?</cron-expression>
+      </cron>
+    </trigger>
+  </schedule>
+</job-scheduling-data>
