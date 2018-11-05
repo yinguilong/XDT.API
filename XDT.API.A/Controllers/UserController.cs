@@ -10,6 +10,7 @@ using XDT.Model.DTO;
 
 namespace XDT.API.A.Controllers
 {
+    [Route("/user")]
     public class UserController : BaseController
     {
         private readonly IUserService _userServiceImp;
@@ -19,8 +20,9 @@ namespace XDT.API.A.Controllers
             _userServiceImp = userServiceImp;
             _boxItemServiceImp = boxItemServiceImp;
         }
+        [HttpPost]
         // GET: /<controller>/
-        [Route("/user/register")]
+        [Route("/register")]
         public IActionResult ReisterUser(RequestEntity<UserDTO> reqEntity)
         {
             if (reqEntity == null || reqEntity.Count != reqEntity.Items.Count())
@@ -37,7 +39,8 @@ namespace XDT.API.A.Controllers
             };
             return Json(responseModel);//
         }
-        [Route("/user/validateuser")]
+        [HttpPost]
+        [Route("/validateuser")]
         public IActionResult ValidateUser(RequestEntity<UserDTO> reqEntity)
         {
             if (reqEntity == null || reqEntity.Items == null || reqEntity.Count != reqEntity.Items.Count())
@@ -60,7 +63,8 @@ namespace XDT.API.A.Controllers
             };
             return Json(responseModel);
         }
-        [Route("/user/my")]
+        [HttpPost]
+        [Route("/my")]
         public IActionResult GetMy(RequestEntity<UserDTO> reqEntity)
         {
             if (reqEntity.Count != reqEntity.Items.Count() && reqEntity.Count != 1)

@@ -21,6 +21,7 @@ namespace XDT.API.A.Controllers
             _boxItemServiceImp = boxItemService;
             _wareItemServiceImp = wareItemService;
         }
+        [HttpPost]
         // GET: /<controller>/
         [Route("/shangpin/add")]
         public IActionResult WareItemAdd(RequestEntity<BoxItemDTO> req)
@@ -39,6 +40,7 @@ namespace XDT.API.A.Controllers
             };
             return Json(responseModel);
         }
+        [HttpPost]
         [Route("/shangpin/prices")]
         public IActionResult PriceItems(RequestEntity<BoxItemDTO> reqEntity)
         {
@@ -56,6 +58,7 @@ namespace XDT.API.A.Controllers
             };
             return Json(responseModel);//
         }
+        [HttpPost]
         [Route("/shangpin/mybox")]
         public IActionResult GetMyBoxItems(RequestEntity<BoxItemDTO> reqEntity)
         {

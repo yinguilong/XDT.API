@@ -12,8 +12,8 @@ using XDT.Repositories.EntityFramework;
 namespace XDT.API.A.Migrations
 {
     [DbContext(typeof(XDTDbContext))]
-    [Migration("20180109080207_InitCreate")]
-    partial class InitCreate
+    [Migration("20181102121714_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

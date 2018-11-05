@@ -8,6 +8,7 @@ namespace XDT.API.A.Controllers
 {
     public class HomeController : Controller
     {
+        [HttpGet]
         public IActionResult Index()
         {
             return Content("做有趣的人，做有意义的事!");

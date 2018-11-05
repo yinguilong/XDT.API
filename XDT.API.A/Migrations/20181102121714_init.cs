@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace XDT.API.A.Migrations
 {
-    public partial class InitCreate : Migration
+    public partial class init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
